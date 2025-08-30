@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypingMaster Pro - Improve Your Typing Skills</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">
+                    <i class="fas fa-keyboard"></i>
+                    TypingMaster Pro
+                </h1>
+            </div>
+        </header>
+
+        <!-- Home Page -->
+        <section class="home-page" id="homePage">
+            <div class="hero">
+                <div class="hero-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h2 class="hero-title">Master Your Typing Skills</h2>
+                <h3 class="hero-subtitle">Fast • Accurate • Professional</h3>
+                <p class="hero-description">
+                    Transform your typing from hunt-and-peck to lightning fast! Our interactive typing tutor 
+                    helps you build muscle memory, improve accuracy, and boost your productivity.
+                </p>
+                
+                <!-- Typing Tips Section -->
+                <div class="typing-tips">
+                    <h4><i class="fas fa-lightbulb"></i> Quick Tips to Get Started</h4>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <i class="fas fa-hand-paper"></i>
+                            <span>Keep your fingers on home row (ASDF - JKL;)</span>
+                        </div>
+                        <div class="tip-card">
+                            <i class="fas fa-eye"></i>
+                            <span>Look at the screen, not your keyboard</span>
+                        </div>
+                        <div class="tip-card">
+                            <i class="fas fa-clock"></i>
+                            <span>Focus on accuracy first, speed will follow</span>
+                        </div>
+                        <div class="tip-card">
+                            <i class="fas fa-dumbbell"></i>
+                            <span>Practice regularly for best results</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="difficulty-selector">
+                    <label for="difficulty">Choose Difficulty:</label>
+                    <select id="difficulty" class="difficulty-dropdown">
+                        <option value="easy">Easy - Short words</option>
+                        <option value="medium" selected>Medium - Mixed text</option>
+                        <option value="hard">Hard - Complex passages</option>
+                    </select>
+                </div>
+
+                <button class="start-btn" id="startBtn">
+                    <i class="fas fa-play"></i>
+                    Start Typing Test
+                </button>
+
+                <!-- High Scores Display -->
+                <div class="high-scores" id="highScores">
+                    <h4><i class="fas fa-trophy"></i> Your Personal Records</h4>
+                    <div class="scores-grid">
+                        <div class="score-card">
+                            <span class="score-label">Easy</span>
+                            <span class="score-value" id="easyBest">-- WPM</span>
+                        </div>
+                        <div class="score-card">
+                            <span class="score-label">Medium</span>
+                            <span class="score-value" id="mediumBest">-- WPM</span>
+                        </div>
+                        <div class="score-card">
+                            <span class="score-label">Hard</span>
+                            <span class="score-value" id="hardBest">-- WPM</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Features Section -->
+                <div class="features-section">
+                    <h4><i class="fas fa-star"></i> Why Choose TypingMaster Pro?</h4>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h5>Track Progress</h5>
+                            <p>Monitor your improvement with detailed statistics and personal records</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h5>Learn Properly</h5>
+                            <p>Master proper finger placement and touch typing techniques</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h5>Practice Anywhere</h5>
+                            <p>Fully responsive design works on desktop, tablet, and mobile</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h5>Challenge Yourself</h5>
+                            <p>Three difficulty levels to match your skill and push your limits</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Statistics Section -->
+                <div class="stats-section">
+                    <h4><i class="fas fa-fire"></i> Join Thousands of Improving Typists</h4>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">WPM Average</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Accuracy Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Difficulty Levels</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Practice Sessions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typing Test Page -->
+        <section class="typing-test" id="typingTest" style="display: none;">
+            <!-- Motivational Banner -->
+            <div class="motivation-banner">
+                <div class="motivation-content">
+                    <i class="fas fa-target"></i>
+                    <span class="motivation-text">Stay focused! Every keystroke makes you better.</span>
+                </div>
+            </div>
+            
+            <div class="test-header">
+                <div class="test-info">
+                    <div class="info-item">
+                        <span class="info-label">Difficulty:</span>
+                        <span class="info-value" id="currentDifficulty">Medium</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Time:</span>
+                        <span class="info-value" id="timer">0s</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">WPM:</span>
+                        <span class="info-value" id="liveWpm">0</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Accuracy:</span>
+                        <span class="info-value" id="liveAccuracy">100%</span>
+                    </div>
+                </div>
+                <button class="back-btn" id="backBtn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </button>
+            </div>
+
+            <div class="text-display" id="textDisplay">
+                <!-- Text passage will be inserted here -->
+            </div>
+
+            <div class="typing-area">
+                <div class="typing-instructions">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Type the text above exactly as shown. Green = correct, Red = incorrect</span>
+                </div>
+                <textarea 
+                    id="typingInput" 
+                    class="typing-input" 
+                    placeholder="Click here and start typing the text above..."
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                ></textarea>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results" id="results" style="display: none;">
+            <div class="results-container">
+                <div class="celebration-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h2 class="results-title">Excellent Work!</h2>
+                <p class="results-subtitle">Here's how you performed</p>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="result-content">
+                            <span class="result-label">Words Per Minute</span>
+                            <span class="result-value" id="finalWpm">0</span>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="result-content">
+                            <span class="result-label">Accuracy</span>
+                            <span class="result-value" id="finalAccuracy">0%</span>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="result-content">
+                            <span class="result-label">Time Taken</span>
+                            <span class="result-value" id="finalTime">0s</span>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="result-content">
+                            <span class="result-label">Errors</span>
+                            <span class="result-value" id="finalErrors">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="new-record" id="newRecord" style="display: none;">
+                    <i class="fas fa-trophy"></i>
+                    <span>🎉 New Personal Best! You're improving! 🎉</span>
+                </div>
+                
+                <!-- Performance Tips -->
+                <div class="performance-tips" id="performanceTips">
+                    <h4><i class="fas fa-chart-line"></i> Tips to Improve</h4>
+                    <div class="tips-container" id="tipsContainer">
+                        <!-- Tips will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button class="restart-btn" id="restartBtn">
+                        <i class="fas fa-redo"></i>
+                        Try Again
+                    </button>
+                    <button class="home-btn" id="homeBtn">
+                        <i class="fas fa-home"></i>
+                        Back to Home
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-keyboard"></i> TypingMaster Pro</h4>
+                    <p>Master your typing skills with our comprehensive training platform. Practice makes perfect!</p>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fas fa-lightbulb"></i> Quick Tips</h4>
+                    <ul>
+                        <li>Practice 15-20 minutes daily</li>
+                        <li>Focus on accuracy first</li>
+                        <li>Keep your wrists straight</li>
+                        <li>Use all ten fingers</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fas fa-keyboard"></i> Keyboard Layout</h4>
+                    <div class="keyboard-visual">
+                        <div class="key-row">
+                            <span class="key">Q</span><span class="key">W</span><span class="key">E</span><span class="key">R</span><span class="key">T</span><span class="key">Y</span><span class="key">U</span><span class="key">I</span><span class="key">O</span><span class="key">P</span>
+                        </div>
+                        <div class="key-row home-row">
+                            <span class="key home-key">A</span><span class="key home-key">S</span><span class="key home-key">D</span><span class="key home-key">F</span><span class="key home-key">J</span><span class="key home-key">K</span><span class="key home-key">L</span><span class="key">;</span>
+                        </div>
+                        <div class="key-row">
+                            <span class="key">Z</span><span class="key">X</span><span class="key">C</span><span class="key">V</span><span class="key">B</span><span class="key">N</span><span class="key">M</span>
+                        </div>
+                    </div>
+                    <p class="home-row-text">Home Row: <strong>ASDF - JKL;</strong></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TypingMaster Pro. Designed for students worldwide. Happy typing! 🚀</p>
+            </div>
+        </footer>
+        
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+            <div class="floating-icon floating-icon-1"><i class="fas fa-keyboard"></i></div>
+            <div class="floating-icon floating-icon-2"><i class="fas fa-rocket"></i></div>
+            <div class="floating-icon floating-icon-3"><i class="fas fa-star"></i></div>
+            <div class="floating-icon floating-icon-4"><i class="fas fa-trophy"></i></div>
+            <div class="floating-icon floating-icon-5"><i class="fas fa-heart"></i></div>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
